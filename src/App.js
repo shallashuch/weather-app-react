@@ -197,6 +197,7 @@ function App() {
             </div>
           </div>
         </div>
+        <p><a href='https://github.com/shallashuch/weather-app-react/tree/main'>Open-source code </a>by Ilaria Massa</p>
       </div>
    </div>
   );

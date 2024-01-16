@@ -8,6 +8,7 @@
   width: 100vw;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
