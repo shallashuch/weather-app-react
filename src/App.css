@@ -1,38 +1,330 @@
 .App {
-  text-align: center;
+  font-family: "Hind", sans-serif;
+  font-size: 20px;
+  color: #3a4d39;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .body-container {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    #3a4d39,
+    #88ab8e,
+    #afc8ad,
+    #eee7da,
+    #afc8ad,
+    #88ab8e,
+    #3a4d39
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .body-container .weather-body {
+  padding: 80px 0px;
+  margin: 100px 0px;
+  background-color: rgba(203, 236, 245, 0.2);
+  border: 0.5px solid #EEE7DA;
+  border-radius: 8px;
+  width: 65%;
+  height: 80%;
+  overflow: hidden;
+  /* display: flex;
+  flex-direction: column; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-body .Search {
+  margin: 0px 0px 50px 0px;
+  width: 100%;
+}
+
+.Search .search-container  {
+  display: flex;
+  justify-content: center;
+}
+
+.Search .search-container .input-container {
+  padding-right: 25px;
+}
+
+.Search .search-container .input-container input {
+  border: 0.2px solid #3a4d39;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.Search .search-container .search-button-container button {
+  padding: 10px;
+  border: 0.2px solid #3a4d39;
+  background-color: #3a4d39;
+  color: #f2f1eb;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.weather-body .Results {
+  width: 100%;
+  margin: 0px;
+}
+
+.Results .result-weather-row {
+  display: flex;
+  padding: 0px 100px;
+}
+
+.Results .result-weather-row .forecast-result-container {
+  min-width: 30%;
+}
+
+.Forecast .separator-line {
+  height: 1px;
+  width: 100%;
+  background-color: #3a4d39;
+  margin: 15px 0px;
+}
+
+.Forecast .day-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Forecast .day-container .weekday p,
+.Forecast .day-container .degree-forecast {
+  font-weight: 700;
+  color: #f2f1eb;
+  text-shadow: 1px 1px 5px #3a4d39;
+}
+
+.Results .result-weather-row .complete-result-container {
+  min-width: 70%;
+  margin-left: 100px;
+}
+
+.Temperature .Position {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 50px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.Position .position-result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.Position .position-result-container .city-name-container {
+  font-weight: 900;
+  color: #f2f1eb;
+  text-shadow: 1px 1px 10px #3a4d39;
+  font-size: 50px;
+  margin: 0px 0px 30px 0px;
+}
+
+.Position .position-result-container .date-hour-container {
+  padding: 5px;
+  margin: 0px;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.Temperature .Position .Daily {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.Daily .temperature-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Daily .temperature-container .Degree {
+  width: 70%;
+}
+
+.Degree .temperature-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Degree .temperature-info .today-degree-container {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.Degree .temperature-info .today-degree-container .day-temperature-info {
+  display: flex;
+}
+
+.Degree .temperature-info .today-degree-container .day-temperature-info .number-degree{
+  margin-right: 10px;
+}
+
+.Daily .temperature-container .WeatherInfo {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.WeatherInfo .day-info {
+  display: flex;
+  justify-content: center;
+}
+
+.WeatherInfo .day-info .detail-day-info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.WeatherInfo .day-info .detail-day-info .min-temperature,
+.WeatherInfo .day-info .detail-day-info .max-temperature,
+.WeatherInfo .day-info .detail-day-info .windspeed {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .App {
+    font-size: 15px;
   }
 }
+
+@media (min-width: 741px) and (max-width: 850px) {
+  .Degree .icon-temperature-container svg {
+    height: 50px;
+  }
+
+  .Degree .today-degree-container {
+    font-size: 25px;
+    font-weight: none;
+  }
+
+  .Position .city-name-container {
+    font-weight: 700;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 760px) {
+  .Forecast .day-container .weekday p {
+    font-weight: none;
+  }
+
+  .Forecast .day-container .degree-forecast {
+    font-weight: none;
+  }
+}
+
+@media (min-width: 605px) and (max-width: 740px) {
+  .WeatherInfo .detail-day-info {
+    font-size: 15px;
+  }
+
+  .Degree .icon-temperature-container svg {
+    height: 40px;
+  }
+
+  .Degree .today-degree-container {
+    font-size: 20px;
+    font-weight: none;
+  }
+
+  .Position .city-name-container {
+    font-weight: 600;
+    font-size: 25px;
+  }
+
+  /* .Results .forecast {
+    font-size: 10px;
+  } */
+
+  .Forecast .day-container .icon-weather {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 604px) {
+  .WeatherInfo .detail-day-info {
+    font-size: 12px;
+  }
+
+  .Degree .icon-temperature-container svg {
+    height: 30px;
+  }
+
+  .Degree .today-degree-container {
+    font-size: 15px;
+    font-weight: none;
+  }
+
+  .Position .city-name-container {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  /* .Results .forecast {
+    font-size: 10px;
+  } */
+}
+
+@media (min-width: 470px) and (max-width: 575px) {
+  .WeatherInfo .detail-day-info {
+    font-size: 15px;
+  }
+
+  .Search .input-container {
+    margin-bottom: 15px;
+  }
+
+  .Search .input-container input {
+    padding: 0px;
+  }
+
+  .Search .search-button-container {
+    padding: 0px;
+  }
+
+  .forecast {
+    display: none;
+  }
+
+  .Forecast .day-container .icon-weather {
+    display: none;
+  }
+
+  .Position .city-name-container {
+    font-weight: none;
+    font-size: 20px;
+  }
+
+  .Degree .icon-temperature-container svg {
+    height: 30px;
+  }
+
+  .Degree .today-degree-container {
+    font-size: 20px;
+    font-weight: none;
+  }
+}
+
+@media (max-width: 469px) {
+  .App .search-container {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .App .result-weather-row {
+    padding: 0px;
+  }
+} 
