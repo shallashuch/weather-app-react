@@ -132,9 +132,7 @@
 .Position .position-result-container .date-hour-container {
   padding: 5px;
   margin: 0px;
-  display: flex;
-  width: 60%;
-  justify-content: space-between;
+  width: 30%;
 }
 
 .Temperature .Position .Daily {
