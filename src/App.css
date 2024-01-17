@@ -191,7 +191,8 @@
 
 .WeatherInfo .day-info .detail-day-info .min-temperature,
 .WeatherInfo .day-info .detail-day-info .max-temperature,
-.WeatherInfo .day-info .detail-day-info .windspeed {
+.WeatherInfo .day-info .detail-day-info .windspeed,
+.WeatherInfo .day-info .detail-day-info .description {
   display: flex;
   justify-content: space-between;
 }
