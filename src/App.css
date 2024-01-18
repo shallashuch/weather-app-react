@@ -45,6 +45,10 @@
   justify-content: center;
 }
 
+.Search .search-container form {
+  display: flex;
+}
+
 .Search .search-container .input-container {
   padding-right: 25px;
 }
@@ -132,7 +136,7 @@
 .Position .position-result-container .date-hour-container {
   padding: 5px;
   margin: 0px;
-  width: 30%;
+  width: 50%;
 }
 
 .Temperature .Position .Daily {

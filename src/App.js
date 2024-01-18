@@ -4,13 +4,12 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo"
 
 function App() {
-  let defaultcity = "Paris"
-  const [weatherData, setWeatherData] = useState({ready: false});
-  const [city, setCity] = useState(defaultcity);
+  const defaultcity = "Amsterdam"
+  let [city, setCity] = useState(defaultcity);
+  let [weatherData, setWeatherData] = useState({ready: false});
 
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       name: response.data.name,
@@ -46,9 +45,7 @@ function App() {
           <div className="weather-body container">
            <div className="Search">
              <div className="row search-container">
-                <form 
-                onSubmit={submitForm}
-                >
+                <form onSubmit={submitForm}>
                   <div className="col-lg-6 col-sm-12 input-container">
                     <input
                       type="search"
