@@ -1,9 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
+import "./WeatherInfo.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 
 
 export default function WeatherInfo(props) {
+
+  let currentTemperature = Math.round(props.data.temperature);
+
+  const [unit, setUnit] = useState(currentTemperature);
+
+  const convertFahrenheit = (event) => {
+    event.preventDefault();
+    let fahrenheit = Math.round((props.data.temperature * 9/5) + 32);
+    setUnit(fahrenheit);
+  }
+
+  const convertCelsius = (event) => {
+    event.preventDefault();
+    setUnit(Math.round(props.data.temperature));
+  }
+
+
   return(
     <div className="WeatherInfo">
       <div className="row result-weather-row">
@@ -136,9 +154,9 @@ export default function WeatherInfo(props) {
                       </div>
                       <div className="col today-degree-container">
                         <div className="row day-temperature-info">
-                          <div className="col-auto number-degree">{props.data.temperature}</div>
+                          <div className="col-auto number-degree">{unit}</div>
                           <div className="col-auto measurement-temperature">
-                            °C | °F
+                            <a href="/" onClick={(event)=>convertCelsius(event)}>°C</a> | <a href="/" onClick={(event)=>convertFahrenheit(event)}>°F</a>
                           </div>
                         </div>
                       </div>
@@ -149,11 +167,11 @@ export default function WeatherInfo(props) {
                       <div className="col-auto detail-day-info">
                         <div className="row min-temperature">
                           <div className="col text-detail">Min:</div>
-                          <div className="col number-detail">{props.data.tempMin}</div>
+                          <div className="col number-detail">{Math.round(props.data.tempMin)} °C</div>
                         </div>
                         <div className="row max-temperature">
                           <div className="col text-detail">Max:</div>
-                          <div className="col number-detail">{props.data.tempMax}</div>
+                          <div className="col number-detail">{Math.round(props.data.tempMax)} °C</div>
                         </div>
                         <div className="row windspeed">
                           <div className="col text-detail">Windspeed:</div>
