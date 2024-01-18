@@ -2,26 +2,10 @@ import React, {useState} from "react";
 import "./WeatherInfo.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 
 export default function WeatherInfo(props) {
-
-  let currentTemperature = Math.round(props.data.temperature);
-
-  const [unit, setUnit] = useState(currentTemperature);
-
-  const convertFahrenheit = (event) => {
-    event.preventDefault();
-    let fahrenheit = Math.round((props.data.temperature * 9/5) + 32);
-    setUnit(fahrenheit);
-  }
-
-  const convertCelsius = (event) => {
-    event.preventDefault();
-    setUnit(Math.round(props.data.temperature));
-  }
-
-
   return(
     <div className="WeatherInfo">
       <div className="row result-weather-row">
@@ -154,10 +138,7 @@ export default function WeatherInfo(props) {
                       </div>
                       <div className="col today-degree-container">
                         <div className="row day-temperature-info">
-                          <div className="col-auto number-degree">{unit}</div>
-                          <div className="col-auto measurement-temperature">
-                            <a href="/" onClick={(event)=>convertCelsius(event)}>°C</a> | <a href="/" onClick={(event)=>convertFahrenheit(event)}>°F</a>
-                          </div>
+                          <WeatherTemperature celsius={props.data.temperature}/>
                         </div>
                       </div>
                     </div>
