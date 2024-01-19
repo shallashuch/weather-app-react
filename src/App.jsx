@@ -13,13 +13,14 @@ function App() {
     setWeatherData({
       ready: true,
       name: response.data.name,
+      timeZone: response.data.timezone,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
       temperature: response.data.main.temp,
       tempMin: response.data.main.temp_min,
       tempMax: response.data.main.temp_max,
       wind: response.data.wind.speed,
-      description: response.data.weather[0].description
+      description: response.data.weather[0].description,
     });
   }
 

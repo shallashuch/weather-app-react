@@ -126,7 +126,7 @@ export default function WeatherInfo(props) {
               <div className="row position-result-container">
                 <div className="row city-name-container">{props.data.name}</div>
                 <div className="row date-hour-container">
-                    <FormattedDate date={props.data.date} />
+                    <FormattedDate date={props.data.date} timezone={props.data.timeZone} />
                 </div>
               </div>
               <div className="Daily">
