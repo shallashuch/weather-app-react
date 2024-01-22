@@ -12,6 +12,7 @@ function App() {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coord: response.data.coord,
       name: response.data.name,
       timeZone: response.data.timezone,
       date: new Date(response.data.dt * 1000),
