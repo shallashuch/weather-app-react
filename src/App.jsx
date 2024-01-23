@@ -67,7 +67,7 @@ function App() {
               <WeatherInfo data={weatherData}/>
             </div>
           </div>
-          <p><a href='https://github.com/shallashuch/weather-app-react/tree/main'>Open-source code </a>by Ilaria Massa</p>
+          <p className='open-source'><a href='https://github.com/shallashuch/weather-app-react/tree/main'>Open-source code </a>by Ilaria Massa</p>
         </div>
      </div>
     )

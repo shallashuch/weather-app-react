@@ -1,9 +1,0 @@
-.FormattedDate {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.FormattedDate .day-month-year-container {
-  margin-top: 10px;
-}

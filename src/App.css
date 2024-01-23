@@ -1,8 +1,7 @@
 .App {
   font-family: "Hind", sans-serif;
-  font-size: 20px;
   color: #3a4d39;
-}
+} 
 
 .App .body-container {
   width: 100vw;
@@ -31,36 +30,42 @@
   width: 65%;
   height: 80%;
   overflow: hidden;
-  /* display: flex;
-  flex-direction: column; */
 }
 
-.weather-body .Search {
+.open-source a {
+  color: #fff;
+}
+
+.open-source{
+  color: #fff;
+}
+
+.App .weather-body .Search {
   margin: 0px 0px 50px 0px;
   width: 100%;
 }
 
-.Search .search-container  {
+.App .Search .search-container  {
   display: flex;
   justify-content: center;
 }
 
-.Search .search-container form {
+.App .Search .search-container form {
   display: flex;
 }
 
-.Search .search-container .input-container {
+.App .Search .search-container .input-container {
   padding-right: 25px;
 }
 
-.Search .search-container .input-container input {
+.App .Search .search-container .input-container input {
   border: 0.2px solid #3a4d39;
   border-radius: 4px;
   padding: 10px;
   font-size: 20px;
 }
 
-.Search .search-container .search-button-container button {
+.App .Search .search-container .search-button-container button {
   padding: 10px;
   border: 0.2px solid #3a4d39;
   background-color: #3a4d39;
@@ -69,54 +74,66 @@
   font-size: 20px;
 }
 
-.weather-body .Results {
+.App .weather-body .Results {
   width: 100%;
   margin: 0px;
 }
 
-.Results .result-weather-row {
+.App .Results .WeatherInfo .result-weather-row {
   display: flex;
   padding: 0px 100px;
 }
 
-.Results .result-weather-row .forecast-result-container {
+.App .Results .WeatherInfo .result-weather-row .forecast-result-container {
   min-width: 30%;
+  font-size: 20px;
 }
 
-.Forecast .separator-line {
+.App .Results .WeatherInfo .Forecast .separator-line {
   height: 1px;
   width: 100%;
   background-color: #3a4d39;
   margin: 15px 0px;
 }
 
-.Forecast .day-container {
+.App .Results .WeatherInfo .Forecast .day-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.Forecast .day-container .weekday p,
-.Forecast .day-container .degree-forecast {
+.App .Results .WeatherInfo .Forecast .day-container .weekday p,
+.App .Results .WeatherInfo .Forecast .day-container .degree-forecast {
   font-weight: 700;
   color: #f2f1eb;
   text-shadow: 1px 1px 5px #3a4d39;
 }
 
-.Results .result-weather-row .complete-result-container {
-  min-width: 70%;
-  margin-left: 100px;
+.App .Results .WeatherInfo .Forecast .day-container .ForecastWeatherDays {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.Temperature .Position {
+.App .Results .WeatherInfo .result-weather-row .complete-result-container {
+  min-width: 70%;
+  margin-left: 80px;
+}
+
+.App .Results .WeatherInfo .Temperature {
+  min-height: 100%;
+}
+
+.App .Results .WeatherInfo .Temperature .Position {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px 0px;
+  padding: 50px 0px;
 }
 
-.Position .position-result-container {
+.App .Results .WeatherInfo .Temperature .Position .position-result-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,26 +142,37 @@
   margin-bottom: 40px;
 }
 
-.Position .position-result-container .city-name-container {
+.App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
   font-weight: 900;
   color: #f2f1eb;
   text-shadow: 1px 1px 10px #3a4d39;
   font-size: 50px;
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
-.Position .position-result-container .date-hour-container {
+.App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
   padding: 5px;
   margin: 0px;
-  width: 50%;
+  width: 70%;
+  font-size: 25px;
 }
 
-.Temperature .Position .Daily {
+.App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container .FormattedDate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container .FormattedDate .day-month-year-container {
+  margin-top: 10px;
+}
+
+.App .Results .WeatherInfo .Temperature .Position .Daily {
   width: 100%;
   margin-top: 40px;
 }
 
-.Daily .temperature-container {
+.App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -152,183 +180,379 @@
   justify-content: center;
 }
 
-.Daily .temperature-container .Degree {
+.App .Results .WeatherInfo .Temperature .Position .Daily .today-degree-container .measurement-temperature a {
+  text-decoration: none;
+  color: #3a4d39;
+}
+
+.App .Results .WeatherInfo .Temperature .Position .Daily .today-degree-container .measurement-temperature a:hover {
+  text-decoration:underline;
+  color: #88ab8e;
+}
+
+.App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .Degree {
   width: 70%;
 }
 
-.Degree .temperature-info {
+.App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.Degree .temperature-info .today-degree-container {
+.App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container {
   font-size: 35px;
   font-weight: bold;
 }
 
-.Degree .temperature-info .today-degree-container .day-temperature-info {
+.App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container .day-temperature-info {
   display: flex;
 }
 
-.Degree .temperature-info .today-degree-container .day-temperature-info .number-degree{
+.App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container .day-temperature-info .WeatherTemperature{
+  display: flex;
+  align-items: center;
+}
+
+.App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container .day-temperature-info .number-degree{
   margin-right: 10px;
 }
 
-.Daily .temperature-container .WeatherInfo {
+.App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
   margin-top: 100px;
   width: 100%;
+  font-size: 20px;
 }
 
-.WeatherInfo .day-info {
+.App .Results .WeatherInfo .day-info {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.WeatherInfo .day-info .detail-day-info {
+.App .Results .WeatherInfo .day-info .detail-day-info {
   display: flex;
   flex-direction: column;
   width: 70%;
 }
 
-.WeatherInfo .day-info .detail-day-info .min-temperature,
-.WeatherInfo .day-info .detail-day-info .max-temperature,
-.WeatherInfo .day-info .detail-day-info .windspeed,
-.WeatherInfo .day-info .detail-day-info .description {
+.App .Results .WeatherInfo .day-info .detail-day-info .min-temperature,
+.App .Results .WeatherInfo .day-info .detail-day-info .max-temperature,
+.App .Results .WeatherInfo .day-info .detail-day-info .windspeed,
+.App .Results .WeatherInfo .day-info .detail-day-info .description {
   display: flex;
   justify-content: space-between;
 }
 
-@media (max-width: 991px) {
-  .App {
-    font-size: 15px;
+@media (min-width: 1300px) and (max-width: 1360px) {
+  .App .Results .WeatherInfo .day-info .detail-day-info {
+    width: 80%;
   }
 }
 
-@media (min-width: 741px) and (max-width: 850px) {
-  .Degree .icon-temperature-container svg {
-    height: 50px;
+@media (min-width: 851px) and (max-width: 1299px) {
+  .App .Results .WeatherInfo .day-info .detail-day-info {
+    width: 90%;
   }
+}
 
-  .Degree .today-degree-container {
-    font-size: 25px;
-    font-weight: none;
+@media (min-width: 851px) and (max-width: 1300px) {
+  .App .Results .WeatherInfo .result-weather-row .complete-result-container {
+    margin-left: 60px;
   }
+  .App .Results .WeatherInfo .Forecast .separator-line {
+    margin: 7px 0px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    width: 80%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
 
-  .Position .city-name-container {
-    font-weight: 700;
+@media (min-width: 851px) and (max-width: 1111px) {
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .Degree {
+    width: 90%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
     font-size: 40px;
   }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    font-size: 16px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    font-size: 20px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .forecast-result-container {
+    font-size: 17px;
+  }
 }
 
-@media (max-width: 760px) {
-  .Forecast .day-container .weekday p {
-    font-weight: none;
+@media (min-width: 851px) and (max-width: 991px) {
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container {
+    font-size: 30px;
   }
-
-  .Forecast .day-container .degree-forecast {
-    font-weight: none;
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .icon-temperature-container canvas {
+    height: 80px;
+    width: 80px;
   }
-}
-
-@media (min-width: 605px) and (max-width: 740px) {
-  .WeatherInfo .detail-day-info {
+  .App .Search .search-container .input-container input {
+    font-size: 15px;
+    padding: 7px;
+  }
+  .App .Search .search-container .search-button-container button {
+    padding: 7px;
     font-size: 15px;
   }
-
-  .Degree .icon-temperature-container svg {
-    height: 40px;
+  .App .Results .WeatherInfo .Forecast .day-container .ForecastWeatherDays .icon-weather canvas {
+    height: 30px;
+    width: 30px;
   }
-
-  .Degree .today-degree-container {
-    font-size: 20px;
-    font-weight: none;
-  }
-
-  .Position .city-name-container {
-    font-weight: 600;
-    font-size: 25px;
-  }
-
-  /* .Results .forecast {
-    font-size: 10px;
-  } */
-
-  .Forecast .day-container .icon-weather {
-    display: none;
+  .App .Results .WeatherInfo .result-weather-row {
+    padding: 0px 60px;
   }
 }
 
-@media (min-width: 576px) and (max-width: 604px) {
-  .WeatherInfo .detail-day-info {
+@media (min-width: 625px) and (max-width: 991px) {
+  .App .body-container .weather-body {
+    padding: 50px 0px;
+  }
+}
+
+@media (min-width: 790px) and (max-width: 850px) {
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .complete-result-container {
+    margin-left: 30px;
+  }
+  .App .Results .WeatherInfo .result-weather-row {
+    padding: 0px 40px;
+  }
+  .App .Results .WeatherInfo .forecast-container{
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 625px) and (max-width: 850px) {
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .Degree {
+    width: 100%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    width: 90%;
+  }
+  .App .Results .WeatherInfo .Forecast .separator-line {
+    margin: 3px 0px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
+    font-size: 30px;
+  }
+  .App .Results .WeatherInfo .day-info .detail-day-info {
+    width: 95%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container {
+    font-size: 22px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .icon-temperature-container canvas {
+    height: 60px;
+    width: 60px;
+  }
+  .App .Search .search-container .input-container input {
+    font-size: 15px;
+    padding: 5px;
+  }
+  .App .Search .search-container .search-button-container button {
+    padding: 5px;
+    font-size: 15px;
+  }
+  .App .Results .WeatherInfo .Forecast .day-container .ForecastWeatherDays .icon-weather canvas {
+    height: 25px;
+    width: 25px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily {
+    margin-top: 20px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container {
+    margin-bottom: 20px;
+  }
+  .App .Results .WeatherInfo .Forecast .day-container .weekday p,
+  .App .Results .WeatherInfo .Forecast .day-container .degree-forecast {
+    font-weight: 300;
+    margin: 5px 0px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    font-size: 15px;
+  }
+  .App .body-container .weather-body {
+    padding: 40px 0px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .forecast-result-container {
+    min-width: 20%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position {
+    padding: 0px;
+  }
+}
+
+
+@media (min-width: 625px) and (max-width: 789px) {
+  .App .Results .WeatherInfo .result-weather-row {
+    padding: 0px 30px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .complete-result-container {
+    margin-left: 10px;
+    min-width: 80%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .App .Results .WeatherInfo .forecast-container{
     font-size: 12px;
   }
+}
 
-  .Degree .icon-temperature-container svg {
-    height: 30px;
+@media (max-width: 624px) {
+  .App .Results .WeatherInfo .result-weather-row {
+    padding: 0px 1px;
+    display: block;
   }
-
-  .Degree .today-degree-container {
-    font-size: 15px;
-    font-weight: none;
-  }
-
-  .Position .city-name-container {
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-  /* .Results .forecast {
+  .App .Results .WeatherInfo .forecast-container {
+    display: flex;
+    justify-content: space-around;
     font-size: 10px;
-  } */
+  }
+  .App .Results .WeatherInfo .Forecast .separator-line {
+    display: none;
+  }
+  .App .Results .WeatherInfo .Forecast .ForecastWeatherDays {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .Degree {
+    width: 90%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .day-info .detail-day-info {
+    width: 80%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .icon-temperature-container canvas {
+    height: 40px;
+    width: 40px;
+  }
+  .App .Results .WeatherInfo .Forecast .day-container .weekday p,
+  .App .Results .WeatherInfo .Forecast .day-container .degree-forecast {
+    font-weight: 100;
+    margin: 0px 0px;
+  }
+  .App .body-container .weather-body {
+    padding: 30px 0px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .complete-result-container {
+    margin-left: 5px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily {
+    margin-top: 10px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container {
+    margin-bottom: 10px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
+    margin-bottom: 30px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position {
+    padding-bottom: 0px;
+  }
 }
 
-@media (min-width: 470px) and (max-width: 575px) {
-  .WeatherInfo .detail-day-info {
+@media (min-width: 555px) and (max-width: 624px) {
+  .App .Results .WeatherInfo .result-weather-row {
+    padding: 0px 10px;
+  }
+  .App .Results .WeatherInfo .result-weather-row .forecast-result-container {
+    min-width: 20%;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    margin-top: 20px;
+  }
+  .App .Results .WeatherInfo .Forecast .separator-line {
+    margin: 2px 0px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    font-size: 18px;
+    width: 80%;
+  }
+  .App .Results .WeatherInfo .day-info .detail-day-info {
     font-size: 15px;
-  }
-
-  .Search .input-container {
-    margin-bottom: 15px;
-  }
-
-  .Search .input-container input {
-    padding: 0px;
-  }
-
-  .Search .search-button-container {
-    padding: 0px;
-  }
-
-  .forecast {
-    display: none;
-  }
-
-  .Forecast .day-container .icon-weather {
-    display: none;
-  }
-
-  .Position .city-name-container {
-    font-weight: none;
-    font-size: 20px;
-  }
-
-  .Degree .icon-temperature-container svg {
-    height: 30px;
-  }
-
-  .Degree .today-degree-container {
-    font-size: 20px;
-    font-weight: none;
+    width: 90%;
   }
 }
 
-@media (max-width: 469px) {
-  .App .search-container {
-    margin: 0px 0px 20px 0px;
+@media (min-width: 380px) and (max-width: 624px) {
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
+    font-size: 25px;
   }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container {
+    font-size: 20px;
+  }
+  .App .Search .search-container .input-container input {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .App .Search .search-container .search-button-container button {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .App .Results .WeatherInfo .Forecast .day-container .ForecastWeatherDays .icon-weather canvas {
+    height: 17px;
+    width: 17px;
+  }
+}
 
-  .App .result-weather-row {
-    padding: 0px;
+@media (min-width: 380px) and (max-width: 555px) {
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    margin-top: 20px;
   }
-} 
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    font-size: 15px;
+    width: 80%;
+  }
+  .App .Results .WeatherInfo .day-info .detail-day-info {
+    font-size: 12px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 379px) {
+
+  .App .Results .WeatherInfo .Temperature .Position .Daily .temperature-container .WeatherInformation {
+    margin-top: 10px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .city-name-container {
+    font-size: 20px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .Daily .Degree .temperature-info .today-degree-container {
+    font-size: 12px;
+  }
+  .App .Results .WeatherInfo .Temperature .Position .position-result-container .date-hour-container {
+    font-size: 12px;
+    width: 80%;
+  }
+  .App .Results .WeatherInfo .day-info .detail-day-info {
+    font-size: 10px;
+    width: 90%;
+  }
+  .App .Search .search-container .input-container input {
+    font-size: 10px;
+    padding: 2px;
+  }
+  .App .Search .search-container .search-button-container button {
+    padding: 2px;
+    font-size: 10px;
+  }
+  .App .Results .WeatherInfo .Forecast .day-container .ForecastWeatherDays .icon-weather canvas {
+    height: 13px;
+    width: 13px;
+  }
+}
