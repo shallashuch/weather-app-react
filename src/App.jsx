@@ -1,7 +1,9 @@
 import './App.css';
 import React, {useState} from "react";
 import axios from "axios";
-import WeatherInfo from "./WeatherInfo"
+import WeatherInfo from "./WeatherInfo";
+import { ThreeDots } from "react-loader-spinner";
+
 
 function App() {
   const defaultcity = "Amsterdam"
@@ -74,7 +76,16 @@ function App() {
   } else {
     search();
     return (
-      <p>Loading..</p>
+      <ThreeDots
+      visible={true}
+      height="80"
+      width="80"
+      color="#4fa94d"
+      radius="9"
+      ariaLabel="three-dots-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+    />
     )
   }
 
