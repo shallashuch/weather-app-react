@@ -6,10 +6,6 @@ export default function Forecast(props) {
   let [forecastData, setForecastData] = useState(null)
   let [ready, setReady] = useState(false)
 
-  useEffect(() => {
-    setReady(false)
-  }, [props]);
-
   function handleResponse(response) {
     setForecastData(response.data.daily);
     setReady(true);

@@ -56,11 +56,11 @@ function App() {
                       id="current-localization-input"
                       name="current-localization-input"
                       placeholder="Enter your city"
-                      onChange={searchCity}
+                      onInput={searchCity}
                     />
                   </div>
                   <div className="col-lg-6 col-sm-12 search-button-container">
-                    <button id="search-button">Search</button>
+                    <button type="submit" id="search-button">Search</button>
                   </div>
                 </form>
               </div>
